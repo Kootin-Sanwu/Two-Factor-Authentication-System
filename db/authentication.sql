@@ -1,5 +1,7 @@
-CREATE DATABASE IF NOT EXISTS authenticationDb;
-USE authenticationDb;
+DROP DATABASE IF EXISTS authenticationdb;
+
+CREATE DATABASE IF NOT EXISTS authenticationdb;
+USE authenticationdb;
 
 CREATE TABLE people (
     id INT AUTO_INCREMENT PRIMARY KEY,

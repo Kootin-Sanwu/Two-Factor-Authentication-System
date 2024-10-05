@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $_SESSION['lname'] = $row['last_name'];
 
                         // Redirect to OTP verification page
-                        header("Location: ../view/otp.php");
+                        header("Location: ../view/verify_otp.php");
                         exit();
                     } else {
                         header("Location: ../view/login.php?msg=Invalid email or password.");
