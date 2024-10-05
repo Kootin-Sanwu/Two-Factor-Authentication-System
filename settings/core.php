@@ -2,7 +2,7 @@
 session_start();
 
 function checkLogin() {
-    if (!isset($_SESSION['user_id'])) {
+    if (!isset($_SESSION['id'])) {
         header("Location: ../login/login.php");
         die();
     }

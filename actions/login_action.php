@@ -5,7 +5,7 @@ include_once "../settings/connection.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
-    // Check if email is provided and valid
+    // Validate email
     if (empty($_POST['email'])) {
         $errors[] = "Email is required.";
     } else {
@@ -15,21 +15,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Check if password is provided
+    // Validate password
     if (empty($_POST['password'])) {
         $errors[] = "Password is required.";
     }
 
-    // If there are no errors, proceed to validate user credentials
     if (empty($errors)) {
         $password = $_POST['password'];
 
-        // Query to check user credentials
-        $stmt = $conn->prepare("SELECT user_id, fname, lname, password_hash FROM users WHERE email=?");
+        // Prepare the SQL query
+        $stmt = $conn->prepare("SELECT id, first_name, last_name, password FROM people WHERE email=?");
         if ($stmt) {
             $stmt->bind_param("s", $email);
             $stmt->execute();
 
+            // Check for execution errors
             if (!$stmt) {
                 $errors[] = "Database query error: " . $conn->error;
             } else {
@@ -39,46 +39,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($result->num_rows == 1) {
                     $row = $result->fetch_assoc();
 
-                    // Verify the password
-                    if (password_verify($password, $row['password_hash'])) {
-                        // Set session variables
-                        $_SESSION['user_id'] = $row['user_id'];
-                        $_SESSION['fname'] = $row['fname'];
-                        $_SESSION['lname'] = $row['lname'];
+                    // Debugging: Print the retrieved row data
+                    // echo "<pre>"; print_r($row); echo "</pre>"; exit();
 
-                        // Redirect to otp.php for OTP verification
-                        header("Location: ../otp/otp.php");
+                    // Verify the password
+                    if (password_verify($password, $row['password'])) { // Ensure the column name matches your schema
+                        // Set session variables
+                        $_SESSION['id'] = $row['id'];
+                        $_SESSION['fname'] = $row['first_name'];  // Ensure column names are consistent
+                        $_SESSION['lname'] = $row['last_name'];
+
+                        // Redirect to OTP verification page
+                        header("Location: ../view/otp.php");
                         exit();
                     } else {
-                        $errors[] = "Invalid email or password.";
+                        header("Location: ../view/login.php?msg=Invalid email or password.");
+                        exit();
                     }
                 } else {
-                    $errors[] = "Invalid email or password.";
+                    header("Location: ../view/login.php?msg=Invalid email or password.");
+                    exit();
                 }
                 $stmt->close();
             }
         } else {
-            $errors[] = "Database query preparation error.";
+            header("Location: ../view/login.php?msg=Database query preparation error.");
+            exit();
         }
-    }
-
-    // Handle errors and redirect to the login page with error messages
-    if (!empty($errors)) {
-        $_SESSION['message'] = [
-            'type' => 'error',
-            'title' => 'Error!',
-            'text' => implode("<br>", $errors)
-        ];
-        header("Location: ../login/login.php");
+    } else {
+        // If there are validation errors, concatenate them and pass via URL
+        header("Location: ../view/login.php?msg=" . urlencode(implode(" ", $errors)));
         exit();
     }
 } else {
-    // Invalid request method error handling
-    $_SESSION['message'] = [
-        'type' => 'error',
-        'title' => 'Error!',
-        'text' => 'Invalid request method.'
-    ];
-    header("Location: ../login/login.php");
+    // Handle invalid request method
+    header("Location: ../view/login.php?msg=Invalid request method.");
     exit();
 }
