@@ -1,6 +1,11 @@
 const inputs = document.querySelectorAll('.otp-card-inputs input')
 const button = document.querySelector('.otp-card button')
 
+function sendOTP() {
+    const email = document.getElementById('email');
+    const otpverify = document.getElementsByClassName('otpverify')[0];
+}
+
 inputs.forEach(input => {
     let lastInputStatus =0
     input.onkeyup = (e) => {
