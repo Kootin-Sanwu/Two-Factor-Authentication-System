@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/otp.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <title>OTP Verification</title>
 </head>
 <body>
     <div class="otp-card">
         <h1>OTP verification</h1>
-        <p> Code has been sendt to **** 12345<p></p>
+        <p> Code has been sent to **** 12345<p></p>
         <div class="otp-card-inputs">
             <input type="text" maxlength="1" autofocus>
             <input type="text" maxlength="1">

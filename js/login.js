@@ -12,6 +12,14 @@ overlayBtn.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Code from the 'register' branch
+    const urlParams = new URLSearchParams(window.location.search);
+    const message = urlParams.get('msg');
+    if (message) {
+        Swal.fire("Notice", message, "info");
+    }
+
+    // Code from the 'main' branch
     const loginForm = document.querySelector('.sign-in-container form');
 
     loginForm.addEventListener('submit', function (event) {
@@ -27,9 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Additional validation logic if needed
-
         // If all validations pass, you can submit the form
         loginForm.submit();
     });
 });
+
