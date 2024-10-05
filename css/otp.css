@@ -1,62 +1,55 @@
-
-
-*{
+* {
     box-sizing: border-box;
 }
 
-h1{
+h1 {
     margin: 0;
 }
 
-body{
-   font-size: 'Poppins',sans-serif; 
-   padding: 0;
-   margin: 0;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-image: url();
-   background-size:cover ;
-   height:100vh;
-
+body {
+    font-size: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url();
+    background-size: cover;
+    height: 100vh;
 }
 
-.otp-card{
+.otp-card {
     text-align: center;
     background-color: #243B55;
     border-radius: 20px;
     padding: 3rem;
     color: white;
-    box-shadow: 0 10px 40px -20px black ;
+    box-shadow: 0 10px 40px -20px black;
 }
 
-.otp-card-inputs{
+.otp-card-inputs {
     margin: 30px 0;
     display: grid;
     gap: 30px;
     justify-content: center;
-    grid-template-columns: repeat(5,auto);
+    grid-template-columns: repeat(5, auto);
 }
 
-.otp-card-inputs input{
+.otp-card-inputs input {
     width: 60px;
     height: 70px;
     font-size: 35px;
     text-align: center;
     border-radius: 20px;
-    border: 1px solid black
-
+    border: 1px solid black;
 }
 
-
-.otp-card-inputs input:focus{
+.otp-card-inputs input:focus {
     outline: 2px solid #141E30;
-   border-color: transparent;
-
-
+    border-color: transparent;
 }
 
-.otp-card button{
+.otp-card button {
     background-color: #141E30;
     border: none;
     padding: 15px 50px;
@@ -65,14 +58,17 @@ body{
     border-radius: 20px;
     cursor: pointer;
     margin-top: 15px;
-
+    transition: all 0.3s ease;  /* Smooth transition for effects */
 }
 
-.otp-card button:hover{
-    opacity: 0.9;
+.otp-card button:hover {
+    background-color: #112448;  /* Change the background color on hover */
+    transform: scale(1.05);     /* Slightly increase the button size */
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5); /* Add a box-shadow */
+    border: 1px solid #fff;     /* Add a white border */
 }
 
-.otp-card button[disabled]{
-  opacity:.6;
-  cursor: default; 
+.otp-card button[disabled] {
+    opacity: 0.5;
+    cursor: default;
 }
