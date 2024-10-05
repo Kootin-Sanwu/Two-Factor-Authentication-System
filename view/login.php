@@ -14,7 +14,7 @@
 
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="../actions/register_action.php" method="POST">
+            <form action="../actions/register.php" method="POST">
                 <h1>Create Account</h1>
                 <div class="infield">
                     <input type="text" placeholder="First Name" name="firstName" />
@@ -40,7 +40,7 @@
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="../actions/login_action.php" method="POST">
+            <form action="../actions/login.php" method="POST">
                 <h1>Sign in</h1>
                 <div class="infield">
                     <input type="email" placeholder="Email" name="email"/>
