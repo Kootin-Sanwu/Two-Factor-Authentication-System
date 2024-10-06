@@ -23,15 +23,15 @@ body {
 
 .container {
     position: fixed; /* Change to fixed */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 850px;
     height: 500px;
     background-color: #FFF;
     box-shadow: 25px 30px 55px #5557;
     border-radius: 13px;
-    z-index: 1; /* Ensure it is below the modal */
+    z-index: 1;
 }
 
 .form-container {
@@ -39,7 +39,7 @@ body {
     width: 60%;
     height: 100%;
     padding: 0px 40px;
-    transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;  
 }
 
 .sign-up-container {

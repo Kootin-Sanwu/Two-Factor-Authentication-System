@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css"> <!-- Change this to your login.css -->
+    <link rel="stylesheet" href="../css/forgot_password.css"> <!-- Change this to your login.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>OTP Verification</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="forgot-password-container">
         <div class="form-container">
             <form action="../actions/forgot_password.php" method="POST" class="email-form">
                 <h1>Email</h1>
@@ -25,7 +25,7 @@
                 <!-- Hidden input to send the message to verify_otp.php -->
                 <input type="hidden" name="message" value="Forgot Password">
 
-                <button type="submit">Verify</button>
+                <button type="submit">VERIFY</button>
             </form>
         </div>
     </div>

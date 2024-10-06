@@ -216,7 +216,7 @@ body {
 
 .otp-card {
     text-align: center;
-    background: linear-gradient(to bottom, #3f5d72, #011429); /* Faded blue gradient */
+    background: linear-gradient(to bottom, #777676, #011b39); /* Faded blue gradient */
     border-radius: 20px;
     padding: 3rem;
     color: white;
@@ -277,7 +277,8 @@ body {
 }
 
 .otp-card button {
-    background-color: var(--grad-clr1); /* Use theme color for button */
+    /* background-color: var(--grad-clr1); */
+    background-color: #243B55;
     border: none;
     padding: 15px 50px;
     font-size: 18px;

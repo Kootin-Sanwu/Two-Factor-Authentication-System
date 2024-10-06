@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $userOTP = implode('', $_POST['OTP']); // Combine the array into a string
     $expectedOTP = $_SESSION['OTP'];
     $signingIn = $_SESSION['signingIn'];
+    $registering = $_SESSION['registering'];
     
     // echo $signingIn;
     // Retrieve the hidden message from the POST data
@@ -37,6 +38,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Check if the user input OTP matches the expected OTP and the message is "Forgot Password"
     if ($userOTP === $expectedOTP && $message_1 === 'Forgot Password'&& $signingIn === 'signingIn') {
+        echo $message_1; // This can be modified as needed
+        header("Location: ../view/home.php?msg=" . urlencode($message_1)); // Use urlencode for safe URL
+        exit();
+    }
+
+    else if ($userOTP === $expectedOTP && $message_1 === 'Forgot Password'&& $registering === 'registering'){
         echo $message_1; // This can be modified as needed
         header("Location: ../view/home.php?msg=" . urlencode($message_1)); // Use urlencode for safe URL
         exit();

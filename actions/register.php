@@ -74,12 +74,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Success";
         // Generate OTP
         $OTP = rand(100000, 999999);
+        $registering = "registering";
 
         $_SESSION['OTP_timestamp'] = time();
+        $_SESSION['registering'] = $registering;
+        $_SESSION['signingIn'] = $signingIn;
 
         // Store OTP and email in session for verification later
         $_SESSION['OTP'] = $OTP;
         $_SESSION['email'] = $email;
+        $_SESSION['registering'] = $registering;
 
         // Send OTP email
         sendOTP($email, $OTP);
