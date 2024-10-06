@@ -75,6 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Generate OTP
         $OTP = rand(100000, 999999);
 
+        $_SESSION['OTP_timestamp'] = time();
+
         // Store OTP and email in session for verification later
         $_SESSION['OTP'] = $OTP;
         $_SESSION['email'] = $email;
@@ -83,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         sendOTP($email, $OTP);
 
         // After sending the OTP
-        $message = "Registration successful. Please check your email for the OTP.";
+        $message = "Successfully registered. Kindly check your email for the OTP.";
         $encodedMessage = urlencode($message);
         header("Location: ../view/verify_otp.php?email=" . urlencode($email) . "&msg=" . $encodedMessage);
         exit();
