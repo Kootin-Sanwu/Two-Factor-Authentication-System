@@ -1,0 +1,322 @@
+/* * {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 0;
+}
+
+body {
+    font-size: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url();
+    background-size: cover;
+    height: 100vh;
+}
+
+.otp-card {
+    text-align: center;
+    background-color: #243B55;
+    border-radius: 20px;
+    padding: 3rem;
+    color: white;
+    box-shadow: 0 10px 40px -20px black;
+}
+
+.otp-card-inputs {
+    margin: 30px 0;
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    grid-template-columns: repeat(6, auto);
+}
+
+.otp-card-inputs input {
+    width: 60px;
+    height: 70px;
+    font-size: 35px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.otp-card-inputs input:focus {
+    outline: 2px solid #141E30;
+    border-color: transparent;
+}
+
+.otp-card button {
+    background-color: #545658;
+    border: none;
+    padding: 15px 50px;
+    font-size: 18px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.otp-card button:hover {
+    background-color: black;
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.otp-card button[disabled] {
+    opacity: 0.5;
+    cursor: default;
+} */
+
+
+
+
+
+
+
+/* * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url();
+    background-size: cover;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.otp-card {
+    text-align: center;
+    background-color: #243B55;
+    border-radius: 20px;
+    padding: 3rem;
+    color: white;
+    box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.6);
+    max-width: 500px;
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.otp-card h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.otp-card p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.otp-card-inputs {
+    margin: 30px 0;
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.otp-card-inputs input {
+    width: 60px;
+    height: 70px;
+    font-size: 35px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid black;
+    transition: border 0.3s ease, outline 0.3s ease;
+}
+
+.otp-card-inputs input:focus {
+    outline: 2px solid #141E30;
+    border-color: transparent;
+}
+
+.otp-card a {
+    color: #c0c0c0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.otp-card a:hover {
+    color: #ffffff;
+}
+
+.otp-card button {
+    background-color: #545658;
+    border: none;
+    padding: 15px 50px;
+    font-size: 18px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.otp-card button:hover {
+    background-color: black;
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.otp-card button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    .otp-card {
+        padding: 2rem;
+    }
+
+    .otp-card h1 {
+        font-size: 1.5rem;
+    }
+
+    .otp-card-inputs input {
+        width: 50px;
+        height: 60px;
+        font-size: 30px;
+    }
+
+    .otp-card button {
+        padding: 10px 40px;
+        font-size: 16px;
+    }
+} */
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6f5f7; /* Light background color */
+    height: 100vh;
+}
+
+.otp-card {
+    text-align: center;
+    background: linear-gradient(to bottom, #777676, #011b39); /* Faded blue gradient */
+    border-radius: 20px;
+    padding: 3rem;
+    color: white;
+    box-shadow: 25px 30px 55px rgba(0, 0, 0, 0.8);
+    max-width: 500px;
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.otp-card h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--grad-clr1); /* Main heading color */
+}
+
+.otp-card p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.otp-card-inputs {
+    margin: 30px 0;
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.otp-card-inputs input {
+    width: 60px;
+    height: 70px;
+    font-size: 35px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #DDD; /* Light border color */
+    transition: border 0.3s ease, outline 0.3s ease;
+    background-color: #f3f3f3; /* Light background for inputs */
+}
+
+.otp-card-inputs input:focus {
+    outline: 2px solid var(--grad-clr1);
+    border-color: transparent; /* Hide border on focus */
+}
+
+.otp-card a {
+    color: white; /* Set the text color to white */
+    text-decoration: underline; /* Underline the text */
+    transition: color 0.3s ease, font-size 0.3s ease; /* Transition for color and size */
+}
+
+.otp-card a:hover {
+    color: #f0f0f0; /* Slightly lighter color on hover */
+    font-size: xx-large; /* Increase font size on hover */
+}
+
+.otp-card button {
+    /* background-color: var(--grad-clr1); */
+    background-color: #243B55;
+    border: none;
+    padding: 15px 50px;
+    font-size: 18px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.otp-card button:hover {
+    background-color: #243B55; /* Darker shade for hover effect */
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.otp-card button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    .otp-card {
+        padding: 2rem; /* Adjust padding for smaller screens */
+    }
+
+    .otp-card h1 {
+        font-size: 1.5rem; /* Reduce font size for heading */
+    }
+
+    .otp-card-inputs input {
+        width: 50px;
+        height: 60px;
+        font-size: 30px; /* Adjust font size for smaller inputs */
+    }
+
+    .otp-card button {
+        padding: 10px 40px;
+        font-size: 16px; /* Adjust button font size */
+    }
+}

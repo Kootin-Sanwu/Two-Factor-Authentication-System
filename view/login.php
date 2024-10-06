@@ -50,7 +50,7 @@
                     <input type="password" placeholder="Password" name="password" />
                     <label></label>
                 </div>
-                <a href="#" class="forgot">Forgot your password?</a>
+                <a href="../view/forgot_password.php?msg=Forgot your password?" class="forgot">Forgot your password?</a>
                 <button>Sign In</button>
             </form>
         </div>
@@ -73,6 +73,6 @@
     
     <script src="../js/signup.js"></script>
     <script src="../js/login.js"></script>
-
+    <script src="../js/verify_otp.js"></script>
 </body>
 </html>

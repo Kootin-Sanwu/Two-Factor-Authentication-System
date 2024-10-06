@@ -60,19 +60,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $_SESSION['fname'] = $row['first_name'];  // Ensure column names are consistent
                         $_SESSION['lname'] = $row['last_name'];
 
-                        // echo "Success";
                         // Generate OTP
                         $OTP = rand(100000, 999999);
+                        $signingIn = "signingIn";
+                        echo $signingIn;
                 
                         // Store OTP and email in session for verification later
                         $_SESSION['OTP'] = $OTP;
                         $_SESSION['email'] = $email;
-                
+                        $_SESSION['signingIn'] = $signingIn;
+                        $_SESSION['OTP_timestamp'] = time();
+
+
                         // Send OTP email
                         sendOTP($email, $OTP);
-                
+
                         // After sending the OTP
-                        $message = "Registration successful. Please check your email for the OTP.";
+                        $message = "Successfully signed in. Kindly check your email for the OTP.";
                         $encodedMessage = urlencode($message);
                         header("Location: ../view/verify_otp.php?email=" . urlencode($email) . "&msg=" . $encodedMessage);
                         exit();
