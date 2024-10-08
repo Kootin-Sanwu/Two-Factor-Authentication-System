@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $userOTP = implode('', $_POST['OTP']); // Combine the array into a string
+    $userOTP = implode('', $_POST['OTP']);
     $expectedOTP = $_SESSION['OTP'];
     $signingIn = $_SESSION['signingIn'];
     $registering = $_SESSION['registering'];
@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $currentTime = time();
 
-    // Ensure that the OTP stored in the session is treated as a string
     $userOTP = (string) $userOTP;
     $expectedOTP = (string) $_SESSION['OTP'];
     
@@ -33,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if the user input OTP matches the expected OTP and the message is "Forgot Password"
     if ($userOTP === $expectedOTP && $message_1 === 'Forgot Password'&& $signingIn === 'signingIn') {
         unset($_SESSION['OTP']);
-        header("Location: ../view/home.php?msg=" . urlencode($message_1)); // Use urlencode for safe URL
+        header("Location: ../view/home.php?msg=" . urlencode($message_1));
         exit();
     }
 

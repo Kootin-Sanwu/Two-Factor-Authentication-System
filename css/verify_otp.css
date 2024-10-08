@@ -56,29 +56,29 @@ body {
     font-size: 35px;
     text-align: center;
     border-radius: 20px;
-    border: 1px solid #DDD; /* Light border color */
+    border: 1px solid #DDD;
     transition: border 0.3s ease, outline 0.3s ease;
-    background-color: #f3f3f3; /* Light background for inputs */
+    background-color: #f3f3f3;
 }
 
 .otp-card-inputs input:focus {
     outline: 2px solid var(--grad-clr1);
-    border-color: transparent; /* Hide border on focus */
+    border-color: transparent;
 }
 
 .otp-card a {
-    color: white; /* Set the text color to white */
-    text-decoration: underline; /* Underline the text */
-    transition: color 0.3s ease, font-size 0.3s ease; /* Transition for color and size */
+    color: white;
+    text-decoration: underline;
+    transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .otp-card a:hover {
-    color: #f0f0f0; /* Slightly lighter color on hover */
-    font-size: x-large; /* Increase font size on hover */
+    color: #f0f0f0;
+    font-size: x-large;
 }
 
 .otp-card button {
-    /* background-color: var(--grad-clr1); */
+    
     background-color: #232e3a;
     border: none;
     padding: 12px 45px;
@@ -91,7 +91,7 @@ body {
 }
 
 .otp-card button:hover {
-    background-color: #232e3a; /* Darker shade for hover effect */
+    background-color: #232e3a;
     transform: scale(1.05);
     box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
 }
@@ -103,21 +103,21 @@ body {
 
 @media (max-width: 600px) {
     .otp-card {
-        padding: 2rem; /* Adjust padding for smaller screens */
+        padding: 2rem;
     }
 
     .otp-card h1 {
-        font-size: 1.5rem; /* Reduce font size for heading */
+        font-size: 1.5rem;
     }
 
     .otp-card-inputs input {
         width: 50px;
         height: 60px;
-        font-size: 30px; /* Adjust font size for smaller inputs */
+        font-size: 30px;
     }
 
     .otp-card button {
         padding: 10px 40px;
-        font-size: 16px; /* Adjust button font size */
+        font-size: 16px;
     }
 }

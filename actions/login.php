@@ -50,14 +50,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($result->num_rows == 1) {
                     $row = $result->fetch_assoc();
 
-                    // Debugging: Print the retrieved row data
-                    // echo "<pre>"; print_r($row); echo "</pre>"; exit();
-
                     // Verify the password
-                    if (password_verify($password, $row['password'])) { // Ensure the column name matches your schema
+                    if (password_verify($password, $row['password'])) {
                         // Set session variables
                         $_SESSION['id'] = $row['id'];
-                        $_SESSION['fname'] = $row['first_name'];  // Ensure column names are consistent
+                        $_SESSION['fname'] = $row['first_name'];
                         $_SESSION['lname'] = $row['last_name'];
 
                         // Generate OTP
@@ -109,35 +106,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 
-
-
 // Function to send OTP via email using PHPMailer
 function sendOTP($email, $OTP) {
     $mail = new PHPMailer(true);
 
     try {
         // Server settings
-        $mail->isSMTP();                                            // Set mailer to use SMTP
-        $mail->Host = 'smtp.gmail.com';                         // Specify main and backup SMTP servers
-        $mail->SMTPAuth   = true;                                 // Enable SMTP authentication
-        $mail->Username   = 'kobekootinsanwu@gmail.com';             // Your Outlook email address
-        $mail->Password   = 'jmvi iiki ugus zqnm';              // Your Outlook password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;      // Enable TLS encryption
-        $mail->Port       = 587;                                  // TCP port to connect to
+        $mail->isSMTP();                                            
+        $mail->Host = 'smtp.gmail.com';                         
+        $mail->SMTPAuth   = true;                                 
+        $mail->Username   = 'kobekootinsanwu@gmail.com';             
+        $mail->Password   = 'jmvi iiki ugus zqnm';              
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;      
+        $mail->Port       = 587;                                  
 
         // Recipients
-        $mail->setFrom('kobekootinsanwu@gmail.com', 'Two Factor Authentication Website'); // Your email address and name
-        $mail->addAddress($email);                                // Add a recipient
+        $mail->setFrom('kobekootinsanwu@gmail.com', 'Two Factor Authentication Website');
+        $mail->addAddress($email);                                
 
         // Content
-        $mail->isHTML(true);                                      // Set email format to HTML
+        $mail->isHTML(true);
         $mail->Subject = 'Your OTP Code';
         $mail->Body    = "Your One-Time Password (OTP) is <b>$OTP</b>. Please use this to complete your registration.";
         $mail->AltBody = "Your One-Time Password (OTP) is $OTP. Please use this to complete your registration.";
 
         $mail->send();
     } catch (Exception $e) {
-        // Handle errors (optional)
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
