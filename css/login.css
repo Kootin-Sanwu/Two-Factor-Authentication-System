@@ -14,7 +14,7 @@
 
 body {
     height: 100vh;
-    background: #f6f5f7;
+    background: linear-gradient(to bottom, #ffffff, #9f9f9f);
     display: grid;
     place-content: center;
     font-family: 'Poppins', sans-serif;
@@ -125,7 +125,7 @@ a.forgot {
 }
 
 button {
-    border-radius: 20px;
+    border-radius: 5px;
     border: 1px solid var(--grad-clr1);
     background: var(--grad-clr1);
     color: #FFF;

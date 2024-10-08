@@ -1,17 +1,3 @@
-// document.addEventListener('DOMContentLoaded', function () {
-//     const urlParams = new URLSearchParams(window.location.search);
-//     const message = urlParams.get('msg');
-    
-//     // Ensure SweetAlert2 is only called if a message exists
-//     if (message) {
-//         Swal.fire({
-//             title: "Notice",
-//             text: message,
-//             icon: "info",    // Using "info" icon to match the context
-//             confirmButtonText: 'OK' // Customizable text for the button
-//         });
-//     }
-// });
 
 document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
@@ -32,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "Successfully signed in. Kindly check your email for the OTP.",
         "Passwords do not match.",
         "A code has been sent to your email address",
+        "Email not found.",
         "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character.",
     ];
 
