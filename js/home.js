@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function submitHover(button) {
         button.style.transform = 'translateY(-2px)';
-        button.style.backgroundColor = '#3d84ff';
+        button.style.backgroundColor = '#232e3a';
         button.style.boxShadow = '5px 5px grey';
     }
 
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function resetStyles() {
         logoutButton.style.transform = 'translateY(2px)';
-        logoutButton.style.backgroundColor = '#1f4a94';
+        logoutButton.style.backgroundColor = '#232e3a';
         logoutButton.style.boxShadow = '1px 1px grey';
     }
 
