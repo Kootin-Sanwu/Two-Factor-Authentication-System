@@ -28,7 +28,7 @@ body {
     transform: translate(-50%, -50%);
     width: 850px;
     height: 500px;
-    background-color: #FFF;
+    background: linear-gradient(to bottom, #ffffff, #9f9f9f);
     box-shadow: 25px 30px 55px #5557;
     border-radius: 13px;
     z-index: 1;
@@ -167,7 +167,7 @@ button {
     height: 40px;
     border: 1px solid #FFF;
     background: transparent;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 .overlay {
