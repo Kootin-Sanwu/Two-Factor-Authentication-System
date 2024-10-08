@@ -150,6 +150,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Retrieve the hidden message from the POST data
     $message = $_POST['message'] ?? '';
+    echo $message;
+    echo $email;
 
     // Check if the message indicates a password reset
     if ($message === 'Forgot Password') {
