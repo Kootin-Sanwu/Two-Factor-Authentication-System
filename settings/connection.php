@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "root";  // Default username for XAMPP
-$password = "";      // Default password is usually empty for XAMPP
+$username = "root";
+$password = "";
 $databasename = "authenticationdb";
 
 // Create connection

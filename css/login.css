@@ -18,11 +18,11 @@ body {
     display: grid;
     place-content: center;
     font-family: 'Poppins', sans-serif;
-    overflow: hidden; /* Prevent scrollbars from appearing when modal pops up */
+    overflow: hidden;
 }
 
 .container {
-    position: fixed; /* Change to fixed */
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -154,7 +154,7 @@ button {
     height: 100%;
     overflow: hidden;
     transition: transform 0.6s ease-in-out;
-    z-index: 9; /* Keep this above the container */
+    z-index: 9;
 }
 
 #overlayBtn {

@@ -28,7 +28,6 @@ if (isset($_SESSION['email'])) {
     sendOTP($email, $OTP);             
     header("Location: ../view/verify_otp.php?msg=" . $message);
 }
-/* Adjust font size for smaller inputs */
 
 // Function to send OTP via email using PHPMailer
 function sendOTP($email, $OTP) {

@@ -22,5 +22,3 @@
 </body>
 
 </html>
-
-<!-- http://localhost/LabAssignment3/admin/addchore.php -->
