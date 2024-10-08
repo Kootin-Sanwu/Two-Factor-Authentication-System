@@ -25,8 +25,7 @@ if (isset($_SESSION['email'])) {
     $_SESSION['OTP_timestamp'] = time();
 
     // Send OTP email
-    sendOTP($email, $OTP);
-                    
+    sendOTP($email, $OTP);             
     header("Location: ../view/verify_otp.php?msg=" . $message);
 }
 
