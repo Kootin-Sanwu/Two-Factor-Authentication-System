@@ -10,19 +10,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $expectedOTP = $_SESSION['OTP'];
     $signingIn = $_SESSION['signingIn'];
     $registering = $_SESSION['registering'];
-    
-    // echo $signingIn;
+
     // Retrieve the hidden message from the POST data
-    $message_1 = $_POST['message'] ?? ''; // Simplified null check using null coalescing
+    $message_1 = $_POST['message'] ?? '';
     $message_1 = trim((string)$_POST['message']);
-
-    // echo $message_1;
-
+    $registering = trim((string)$_SESSION['registering']);
+    
     $currentTime = time();
 
     // Ensure that the OTP stored in the session is treated as a string
-    $userOTP = (string) $userOTP; // Cast to string, if necessary
-    $expectedOTP = (string) $_SESSION['OTP']; // Cast to string, if necessary
+    $userOTP = (string) $userOTP;
+    $expectedOTP = (string) $_SESSION['OTP'];
     
     $OTP_time_created = $_SESSION['OTP_timestamp'];
     $overdueOTP = $currentTime - $OTP_time_created;
@@ -32,33 +30,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
-    // Debugging output
-    // echo "Expected OTP: $expectedOTP<br>";
-    // echo "User input OTP: $userOTP<br>";
-
     // Check if the user input OTP matches the expected OTP and the message is "Forgot Password"
     if ($userOTP === $expectedOTP && $message_1 === 'Forgot Password'&& $signingIn === 'signingIn') {
-        echo $message_1; // This can be modified as needed
+        unset($_SESSION['OTP']);
         header("Location: ../view/home.php?msg=" . urlencode($message_1)); // Use urlencode for safe URL
         exit();
     }
 
     else if ($userOTP === $expectedOTP && $message_1 === 'Forgot Password'&& $registering === 'registering'){
-        echo $message_1; // This can be modified as needed
-        header("Location: ../view/home.php?msg=" . urlencode($message_1)); // Use urlencode for safe URL
+        unset($_SESSION['OTP']);
+        header("Location: ../view/home.php?msg=" . urlencode($message_1));
         exit();
     }
 
     else if ($userOTP === $expectedOTP && $message_1 === 'Forgot Password') {
-        echo $message_1; // This can be modified as needed
-        header("Location: ../view/reset_password.php?msg=" . urlencode($message_1)); // Use urlencode for safe URL
+        unset($_SESSION['OTP']);
+        header("Location: ../view/reset_password.php?msg=" . urlencode($message_1));
+        exit();
+    }
+
+    else if ($userOTP === $expectedOTP && $message_1 === $registering) {
+        unset($_SESSION['OTP']);
+        header("Location: ../actions/register.php?msg=" . urlencode($message_1));
         exit();
     }
 
     // Check if the entered OTP matches the expected OTP (as a string)
-    elseif ($userOTP === $expectedOTP) {
-        unset($_SESSION['OTP']); // Clear OTP after successful verification
-        echo $message;
+    else if ($userOTP === $expectedOTP) {
+        unset($_SESSION['OTP']);
         header("Location: ../view/home.php?msg=OTP verified successfully.");
         exit();
     }
