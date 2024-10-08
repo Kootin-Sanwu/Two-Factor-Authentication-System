@@ -9,14 +9,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f6f5f7;
+    /* background-color: #f6f5f7; */
+    background: linear-gradient(to bottom, #ffffff, #9f9f9f);
     height: 100vh;
 }
 
 .otp-card {
     text-align: center;
-    background: linear-gradient(to bottom, #838383, #011b39);
-    border-radius: 20px;
+    background: linear-gradient(to bottom, #676767, #001228);
+    border-radius: 10px;
     padding: 5rem;
     color: white;
     box-shadow: 25px 30px 55px rgba(0, 0, 0, 0.8);
@@ -73,17 +74,17 @@ body {
 
 .otp-card a:hover {
     color: #f0f0f0; /* Slightly lighter color on hover */
-    font-size: xx-large; /* Increase font size on hover */
+    font-size: x-large; /* Increase font size on hover */
 }
 
 .otp-card button {
     /* background-color: var(--grad-clr1); */
-    background-color: #4f7bad;
+    background-color: #243B55;
     border: none;
-    padding: 15px 50px;
+    padding: 12px 45px;
     font-size: 18px;
     color: white;
-    border-radius: 10px;
+    border-radius: 2px;
     cursor: pointer;
     margin-top: 15px;
     transition: all 0.3s ease;

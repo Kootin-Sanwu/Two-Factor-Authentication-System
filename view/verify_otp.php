@@ -33,7 +33,7 @@ session_start();
             <!-- Hidden input to send the message to verify_otp.php -->
             <?php if (isset($_GET['msg'])): 
                 $message = $_GET['msg'];
-                echo $message;
+                $message;
             ?>
             <input type="hidden" name="message" value="
             <?php 
